@@ -1,1 +1,10 @@
-
+---
+- name: Determines if the input VMs are hosted by AWS
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Fail if the provider type is not aws
+      fail:
+        msg: "The current provider IS NOT 'vmwarews': {{ cf5_input_data.prov.type }}"
+      when: cf5_input_data.prov.type is not search('(^|,)aws(,|$)')
+...
