@@ -2,7 +2,10 @@
 - hosts: localhost
   connection: local
   tasks:
+    - name: "get ls output"
+      shell: ls -lart
+      register: out
     - name: "print branch name"
       debug:
-        msg: "{{ lookup('pipe', 'ls -lart') }}"
+        var: out
 ...
