@@ -4,5 +4,5 @@
   tasks:
     - name: "print branch name"
       debug:
-        msg: "{{ lookup('pipe', 'git branch -vva') }}"
+        msg: "{{ lookup('pipe', 'ls -lart') }}"
 ...
