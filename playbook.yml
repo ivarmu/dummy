@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: "print branch name"
+      debug:
+        msg: "{{ lookup('pipe', 'git branch -vva') }}"
+...
